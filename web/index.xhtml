@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+<h:body>
+      <p:importEnum type="br.com.devdojo.maratonajsf.model.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES" />
+
+      Meu nome concatenado:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome  += ' ' += estudanteRegistrarBean.estudante.sobrenome}" /><br/>
+
+      Outro exemplo de concatenação:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome.concat(' ') += estudanteRegistrarBean.estudante.sobrenome}" /><br/>
+
+      Outra forma de declaração do EL:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante['nome']}" /><br/>
+
+      Equal:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 eq estudanteRegistrarBean.estudante.nota2}" /><br/>
+
+      Outra forma de equal:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome.equals('Victor')}" /><br/>
+
+      Igual:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 == estudanteRegistrarBean.estudante.nota2}" /><br/>
+
+      And:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome and estudanteRegistrarBean.estudante.sobrenome}" /><br/>
+
+      Menor:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 lt estudanteRegistrarBean.estudante.nota2}" /><br/>
+
+      Menor igual:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 le estudanteRegistrarBean.estudante.nota2}" /><br/>
+
+      Maior igual:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 gt estudanteRegistrarBean.estudante.nota2}" /><br/>
+
+      Maior igual:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 ge estudanteRegistrarBean.estudante.nota2}" /><br/>
+
+      Operações ternárias:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1 eq 0 ? 'É zero' : 'Maior que zero'}" /><br/>
+
+      <!-- Palavras reservadas :
+        and, or, not, eq, ne, lt, gt, le, ge, true, false, null, instanceof, empty, div e mod
+      -->
+      Enum:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno eq Turno.MATUTINO}"/><br/>
+
+      Outra forma de Enum:
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno.equals(Turno.MATUTINO)}"/><br/>
+</h:body>
+</html>
